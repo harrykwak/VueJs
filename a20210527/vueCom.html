@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>vueCompo</title>
+</head>
+<body>
+    <div id="app">
+        <h1 id="dragon">전역, 지역 컴포넌트 테스트</h1>
+        <compo1></compo1><!--4. 인스턴스 부착-->
+        <compo2></compo2><!--4. 인스턴스 부착-->
+    </div>
+    <div id="app2">
+        <h1 id="dragon">전역, 지역 컴포넌트 테스트</h1>
+        <compo1></compo1><!--4. 인스턴스 부착-->
+        <compo2></compo2><!--4. 인스턴스 부착-->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- 1. 라이브러리 로딩-->
+    <script>
+        var cmp = {
+            template: '<div>지역 컴포넌트가 등록되었습니다.</div>'
+        };
+        Vue.component('compo1', { // 2. 컴포넌트 등록
+            template: '<div>전역 컴포넌트가 등록되었습니다!</div>' // 5. 인스턴스 내용 변경
+        });
+
+        new Vue({ //3. 인스턴스 객체 생성
+            el: '#app',
+            components:{
+                'compo2': cmp
+            }
+        });
+        new Vue({ //3. 인스턴스 객체 생성
+            el: '#app2',
+            
+        });
+    </script>
+    <script src="t.js"></script>
+
+    
+</body>
+</html>

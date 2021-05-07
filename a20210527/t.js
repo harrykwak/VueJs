@@ -1,2 +1,2 @@
 const dragon = document.querySelector("#dragon");
-dragon.innerHTML = "testing";
+dragon.innerHTML = "Component Test";

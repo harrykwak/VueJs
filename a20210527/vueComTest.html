@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h3>{{ message }}</h3>
+        <todo-footer></todo-footer>
+        <todo-list></todo-list>
+        </header>
+
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- 1. 라이브러리 로딩-->
+    <script>
+
+        var test1={
+            template:'<div>지역 컴포</div>'
+        };
+
+        Vue.component('todo-footer',{
+            template:'<div>전역 컴포</div>'
+        });
+
+
+
+        new Vue({
+            el:'#app',
+            data:{
+                message:'메세지 내용'
+            },
+            components:{
+                'todo-list':test1
+            }
+
+        });
+
+    </script>
+
+
+</body>
+</html>
